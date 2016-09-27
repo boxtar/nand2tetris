@@ -93,7 +93,13 @@ LD2 = ( LD1 | JLT )
 load_PC = ( LD2 & instruction[15] )
 
 // Invoke Program Counter
-
+// Note that we're discarding the MSB of the output
+PC ( in=out_A,
+     load=load_PC,
+     reset=reset,
+     inc=true,
+     out[0..14]=pc
+   )
 
 
 
