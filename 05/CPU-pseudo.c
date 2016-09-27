@@ -5,7 +5,6 @@ PSEUDO CODE
 Assumptions:
 int = word = 16 bit
 bool = 1 bit
-
 */
 
 // Inputs
@@ -31,5 +30,6 @@ int newA = instruction[15] ?  ALUOut : instruction
 
 // AND-gate within OR-gate
 // If this is an A-instruction then we need to load the instruction into Register A
+// OR if this is a C-instruction AND user specified to load into register A (instruction[5])
 int storeToRegisterA = ( ! instruction[15] | ( instruction[5] & instruction[15] ) );
 
